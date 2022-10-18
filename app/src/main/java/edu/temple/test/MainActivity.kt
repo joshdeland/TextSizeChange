@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.*
 import org.w3c.dom.Text
@@ -16,6 +17,8 @@ class MainActivity : AppCompatActivity(), SizeFragment.ValueChangeInterface {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
+       val sizeViewModel = ViewModelProvider(this)[SizeViewModel::class.java]
 
         // Create and attach fragments if not already exist
         if (savedInstanceState == null) {
